@@ -1,5 +1,17 @@
-<% if @games.where("date = ?", Date.today).any? %>
-  <h2>Yes!<h2>
-<% else %>
-  <h2>No.</h2>
-<% end %>
+<div class="about">
+  <p>Quickest way to find out if there is a bobblehead giveway at a Major League baseball game.</p>
+</div>
+<div class="answer">
+  <% if @games.where("date = ?", Date.today).any? %>
+    <h2><%= Date.today.strftime('%b %e, %Y') %>: Yes</h2>
+    <div class="events">
+      <ul>
+        <% @games.where("date = ?", Date.today).each do |game| %>
+          <li><%= "#{game.team_name} vs #{game.opponent}: #{game.promotion}" %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% else %>
+    <h2><%= Date.today.strftime('%b %e, %Y') %>: No</h2>
+  <% end %>
+</div>

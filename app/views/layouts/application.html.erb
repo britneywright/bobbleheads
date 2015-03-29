@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   <title>Can I get a Bobblehead Today?</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
   <%= render 'layouts/header' %>
-<%= yield %>
+  <main class="content">
+    <%= yield %>
+  </main>
 <%= render 'layouts/footer' %>
 </body>
 </html>

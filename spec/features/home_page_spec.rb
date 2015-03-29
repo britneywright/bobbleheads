@@ -12,7 +12,8 @@ describe "visiting home page" do
     end
     it "indicates bobbleheads are available" do
       visit root_path
-      expect(page).to have_content "Yes!"
+      save_and_open_page
+      expect(page).to have_content "Yes"
     end
   end
   
@@ -22,7 +23,7 @@ describe "visiting home page" do
     end
     it "indicates bobbleheads are NOT available" do
       visit root_path
-      expect(page).to have_content "No."
+      expect(page).to have_content "No"
     end
   end
 end
