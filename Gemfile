@@ -53,4 +53,5 @@ group :test do
   gem 'launchy'
   gem 'selenium-webdriver'
   gem 'timecop'
+  gem 'pry'
 end

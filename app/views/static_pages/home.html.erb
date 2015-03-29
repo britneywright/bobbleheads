@@ -1,4 +1,4 @@
-<% if @games.where(date: Date.today).any? %>
+<% if @games.where("date = ?", Date.today).any? %>
   <p>Yes!<p>
 <% else %>
   <p>No.</p>
